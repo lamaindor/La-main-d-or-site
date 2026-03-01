@@ -1,159 +1,241 @@
-<html>
- <head>  
- </head> 
- <body> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>La Main d’Or - Informations sur l’Or</title> 
-  <link rel="icon" href="https://img.icons8.com/ios-filled/50/golden/medal.png" type="image/png"> 
-  <style>
-* { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Arial', sans-serif; background:#f5f5f5; color:#333; line-height:1.6; }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LA MAIN D’OR - Informations sur l’Or</title>
 
-/* Header */
-header { width:100%; max-height:300px; overflow:hidden; }
-header img { width:100%; display:block; }
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-/* Navigation sticky */
-nav { background:#333; display:flex; justify-content:center; flex-wrap:wrap; position:sticky; top:0; z-index:1000; }
-nav a { color:white; padding:15px 25px; text-decoration:none; cursor:pointer; transition:0.3s; }
-nav a:hover { background:#555; }
-#langSwitch { margin-left:10px; background:#FFD700; border:none; padding:8px 12px; border-radius:5px; cursor:pointer; font-weight:bold; }
-
-/* Container */
-.container { padding:40px 20px; max-width:1200px; margin:auto; }
-
-/* Sections */
-section { margin-bottom:50px; display:flex; flex-wrap:wrap; align-items:center; gap:20px; opacity:0; transform:translateY(50px); transition:all 1s ease; }
-section.visible { opacity:1; transform:translateY(0); }
-section img { max-width:400px; width:100%; border-radius:10px; transition: transform 0.3s; }
-section img:hover { transform: scale(1.05); }
-section div { flex:1; }
-h2 { color:#B8860B; margin-bottom:20px; font-size:2em; }
-p { margin-bottom:15px; font-size:1.1em; }
-ul { margin-left:20px; margin-bottom:15px; }
-
-/* Contact */
-#contact { background:#FFD700; padding:40px 20px; text-align:center; color:#000; opacity:0; transform:translateY(50px); transition:all 1s ease; }
-#contact.visible { opacity:1; transform:translateY(0); }
-#contact form { display:flex; flex-direction:column; gap:10px; max-width:500px; margin:auto; }
-#contact input, #contact textarea { padding:10px; border-radius:5px; border:1px solid #ccc; font-size:1em; }
-#contact button { padding:10px; background:#B8860B; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold; }
-#contact button:hover { background:#a47507; }
-
-/* Footer */
-footer { background:#333; color:white; text-align:center; padding:20px; margin-top:40px; }
-footer .socials a { margin:0 10px; color:white; text-decoration:none; font-size:1.5em; transition:0.3s; }
-footer .socials a:hover { color:#FFD700; }
-
-/* Badge flottant */
-#badge { position: fixed; top: 20px; right: 20px; background: #FFD700; color: #000; padding: 10px 15px; border-radius: 10px; display: flex; align-items: center; gap: 10px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 2000; font-size: 14px; }
-#badge img { width:25px; height:25px; transition: transform 0.3s; }
-#badge:hover img { transform: rotate(15deg); }
-
-/* Responsive */
-@media(max-width:1024px) { section img { max-width:50%; } }
-@media(max-width:768px) { 
-    h2 { font-size:1.7em; }
-    section { flex-direction:column; text-align:center; }
-    section img { max-width:80%; }
-    #contact form { width:100%; }
-    footer .socials a { font-size:1.2em; }
-}
-</style> 
-  <header> 
-   <img src="https://images.pexels.com/photos/409912/pexels-photo-409912.jpeg" alt="La Main d'Or Banner"> 
-  </header> 
-  <!-- Badge flottant --> 
-  <div id="badge"> 
-   <img src="https://img.icons8.com/ios-filled/50/golden/medal.png" alt="Certifié"> 
-   <span data-fr="Certifié partenaire depuis 2014" data-en="Certified Partner Since 2014">Certifié partenaire depuis 2014</span> 
-  </div> 
-  <nav> 
-   <a onclick="showSection('about')">À propos / About</a> 
-   <a onclick="showSection('goldinfo')">L'Or / Gold</a> 
-   <a onclick="showSection('services')">Services</a> 
-   <a onclick="showSection('contact')">Contact</a> 
-   <button id="langSwitch" onclick="switchLanguage()">EN / FR</button> 
-  </nav> 
-  <div class="container" id="about"> 
-   <section> 
-    <img src="https://images.pexels.com/photos/128867/pexels-photo-128867.jpeg" alt="Information sur l'entreprise"> 
-    <div> 
-     <h2 data-fr="À propos de La Main d’Or" data-en="About La Main d’Or">À propos de La Main d’Or</h2> 
-     <p data-fr="Depuis 2014, La Main d’Or diffuse des informations fiables sur l’or à l’échelle internationale. Nous collaborons avec Le Comptoir de France et plusieurs grands magasins de bijoux pour partager notre expertise." data-en="Since 2014, La Main d’Or has been providing reliable information about gold internationally. We collaborate with Le Comptoir de France and several major jewelry stores to share our expertise."> Depuis 2014, La Main d’Or diffuse des informations fiables sur l’or à l’échelle internationale. Nous collaborons avec Le Comptoir de France et plusieurs grands magasins de bijoux pour partager notre expertise. </p> 
-     <p data-fr="Notre mission est de sensibiliser les visiteurs aux valeurs et à la beauté de l’or, en fournissant des informations claires, précises et accessibles." data-en="Our mission is to educate visitors on the value and beauty of gold, providing clear, precise, and accessible information."> Notre mission est de sensibiliser les visiteurs aux valeurs et à la beauté de l’or, en fournissant des informations claires, précises et accessibles. </p> 
-    </div> 
-   </section> 
-  </div> 
-  <div class="container" id="goldinfo"> 
-   <section> 
-    <div> 
-     <h2 data-fr="Tout savoir sur l’or" data-en="All About Gold">Tout savoir sur l’or</h2> 
-     <p data-fr="L’or est un métal précieux utilisé depuis des millénaires pour la monnaie, les bijoux et les réserves de valeur. Sa rareté et ses propriétés uniques en font un symbole de richesse et de sécurité à travers le monde." data-en="Gold is a precious metal used for millennia for currency, jewelry, and stores of value. Its rarity and unique properties make it a symbol of wealth and security worldwide."> L’or est un métal précieux utilisé depuis des millénaires pour la monnaie, les bijoux et les réserves de valeur. Sa rareté et ses propriétés uniques en font un symbole de richesse et de sécurité à travers le monde. </p> 
-     <p data-fr="Il est reconnu pour sa durabilité, sa résistance à la corrosion et sa valeur stable, ce qui en fait un choix privilégié pour les investisseurs et les collectionneurs." data-en="It is known for its durability, resistance to corrosion, and stable value, making it a preferred choice for investors and collectors."> Il est reconnu pour sa durabilité, sa résistance à la corrosion et sa valeur stable, ce qui en fait un choix privilégié pour les investisseurs et les collectionneurs. </p> 
-    </div> 
-    <img src="https://images.pexels.com/photos/315788/pexels-photo-315788.jpeg" alt="Lingot d'or"> 
-   </section> 
-  </div> 
-  <div class="container" id="services"> 
-   <section> 
-    <img src="https://images.pexels.com/photos/930163/pexels-photo-930163.jpeg" alt="Services et sécurité de l'or"> 
-    <div> 
-     <h2 data-fr="Nos services" data-en="Our Services">Nos services</h2> 
-     <ul> 
-      <li data-fr="L’histoire de l’or et ses grandes découvertes" data-en="The history of gold and major discoveries">L’histoire de l’or et ses grandes découvertes</li> 
-      <li data-fr="Les méthodes d’évaluation et d’authentification" data-en="Methods of valuation and authentication">Les méthodes d’évaluation et d’authentification</li> 
-      <li data-fr="Les tendances du marché mondial de l’or" data-en="Global gold market trends">Les tendances du marché mondial de l’or</li> 
-      <li data-fr="Les conseils pour la sécurité et le stockage de l’or" data-en="Advice for gold security and storage">Les conseils pour la sécurité et le stockage de l’or</li> 
-      <li data-fr="Collaboration avec de grands magasins et comptoirs spécialisés" data-en="Collaboration with major stores and specialized counters">Collaboration avec de grands magasins et comptoirs spécialisés</li> 
-     </ul> 
-    </div> 
-   </section> 
-  </div> 
-  <div id="contact" class="container"> 
-   <h2 data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</h2> 
-   <form action="mailto:contact@la-maindor.com" method="post" enctype="text/plain"> 
-    <input type="text" name="Nom" placeholder="Votre nom / Your Name" required> 
-    <input type="email" name="Email" placeholder="Votre email / Your Email" required> 
-    <textarea name="Message" rows="5" placeholder="Votre message / Your Message" required></textarea> 
-    <button type="submit" data-fr="Envoyer" data-en="Send">Envoyer</button> 
-   </form> 
-  </div> 
-  <footer> 
-   <div class="socials"> 
-    <a href="#" target="_blank">📘</a> 
-    <a href="#" target="_blank">📸</a> 
-    <a href="#" target="_blank">💼</a> 
-   </div> 
-   <p>© 2026 La Main d’Or. Tous droits réservés.</p> 
-  </footer> 
-  <script>
-// Animation au scroll
-const sections = document.querySelectorAll('section, #contact');
-function revealSections() {
-    const windowHeight = window.innerHeight;
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if(top < windowHeight - 100) sec.classList.add('visible');
-    });
-}
-window.addEventListener('scroll', revealSections);
-window.addEventListener('load', revealSections);
-
-// Langue FR/EN
-let currentLang = 'fr';
-function switchLanguage() {
-    currentLang = currentLang === 'fr' ? 'en' : 'fr';
-    document.querySelectorAll('[data-fr]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
-    });
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    color:#333;
+    line-height:1.7;
 }
 
-// Navigation smooth scroll
-function showSection(id) {
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+header{
+    background:#111;
+    color:#FFD700;
+    text-align:center;
+    padding:80px 20px;
 }
-</script>   
- </body>
+header h1{
+    font-size:3em;
+    letter-spacing:2px;
+}
+
+nav{
+    background:#000;
+    display:flex;
+    justify-content:center;
+}
+nav a{
+    color:white;
+    padding:15px 25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{
+    background:#B8860B;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+h2{
+    color:#B8860B;
+    margin-bottom:25px;
+    font-size:2em;
+}
+
+.contact-box{
+    background:#FFD700;
+    padding:40px;
+    border-radius:10px;
+}
+
+.contact-box a{
+    color:#111;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+button.legal-btn{
+    padding:15px 30px;
+    background:#111;
+    color:#FFD700;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:5px;
+    margin-top:20px;
+}
+button.legal-btn:hover{
+    background:#333;
+}
+
+/* MODALE */
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s;
+    z-index:9999;
+}
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+.modal-content{
+    background:#111;
+    color:white;
+    width:90%;
+    max-width:800px;
+    max-height:80vh;
+    padding:40px;
+    border-radius:10px;
+    overflow-y:auto;
+    transform:translateY(50px);
+    transition:0.4s;
+}
+.modal.active .modal-content{
+    transform:translateY(0);
+}
+.modal-content::-webkit-scrollbar{
+    width:8px;
+}
+.modal-content::-webkit-scrollbar-thumb{
+    background:#FFD700;
+    border-radius:10px;
+}
+
+.close{
+    color:#FFD700;
+    float:right;
+    font-size:1.5em;
+    cursor:pointer;
+}
+
+footer{
+    background:#000;
+    color:white;
+    text-align:center;
+    padding:40px;
+    margin-top:60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>LA MAIN D’OR</h1>
+<p>Expertise & Analyse du Marché de l’Or depuis 2014</p>
+</header>
+
+<nav>
+<a href="#about">À propos</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<section id="about">
+<h2>Présentation</h2>
+<p>LA MAIN D’OR est spécialisée dans l’analyse du marché de l’or.</p>
+<p><strong>Capital déclaré :</strong> 500 000 € par mois</p>
+</section>
+
+<section id="services">
+<h2>Nos Services</h2>
+<ul>
+<li>Analyse du marché aurifère</li>
+<li>Études économiques</li>
+<li>Conseils spécialisés</li>
+</ul>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+
+<div class="contact-box">
+<p><strong>Adresse :</strong><br>
+17 Place Jeanne d'Arc<br>
+31000 Toulouse<br>
+France</p>
+
+<p><strong>Téléphone :</strong><br>
+<a href="tel:+33631123050">+33 6 31 12 30 50</a></p>
+
+<p><strong>Email :</strong><br>
+<a href="mailto:Sarahmorell36@gmail.com">Sarahmorell36@gmail.com</a></p>
+</div>
+
+<button class="legal-btn" onclick="openModal()">Voir les Mentions Légales</button>
+
+</section>
+
+</div>
+
+<!-- MODALE -->
+
+<div class="modal" id="legalModal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 style="color:#FFD700;">Mentions Légales</h2>
+
+<p><strong>Dénomination :</strong> LA MAIN D’OR</p>
+<p><strong>Forme juridique :</strong> SARL</p>
+<p><strong>SIRET :</strong> 750 713 893</p>
+<p><strong>RCS :</strong> Toulouse</p>
+<p><strong>Siège social :</strong> 17 Place Jeanne d'Arc, 31000 Toulouse</p>
+<p><strong>Capital :</strong> 500 000 € (déclaration mensuelle)</p>
+<p><strong>TVA :</strong> FR 75 750713893</p>
+<p><strong>Code APE :</strong> 6619B</p>
+
+<h3 style="color:#FFD700;margin-top:20px;">Contact officiel</h3>
+<p>Téléphone : +33 6 31 12 30 50</p>
+<p>Email : Sarahmorell36@gmail.com</p>
+
+<h3 style="color:#FFD700;margin-top:20px;">Responsabilité</h3>
+<p>Les informations publiées sont fournies à titre informatif et ne constituent pas un conseil en investissement.</p>
+
+</div>
+</div>
+
+<footer>
+<p>© 2026 LA MAIN D’OR – Toulouse</p>
+</footer>
+
+<script>
+function openModal(){
+    document.getElementById("legalModal").classList.add("active");
+}
+function closeModal(){
+    document.getElementById("legalModal").classList.remove("active");
+}
+window.onclick = function(event){
+    const modal = document.getElementById("legalModal");
+    if(event.target == modal){
+        modal.classList.remove("active");
+    }
+}
+</script>
+
+</body>
 </html>
