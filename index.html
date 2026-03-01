@@ -3,238 +3,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LA MAIN D’OR - Informations sur l’Or</title>
+<title>LA MAIN D’OR | Private Gold Advisory</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f4f4f4;
-    color:#333;
-    line-height:1.7;
+    font-family:'Montserrat', sans-serif;
+    background:#0b0b0b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* FOND LUXE ANIMÉ */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle at 30% 30%, rgba(255,215,0,0.08), transparent 60%);
+    animation:moveBg 12s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes moveBg{
+    from{transform:translate(-5%,-5%)}
+    to{transform:translate(5%,5%)}
 }
 
 header{
-    background:#111;
-    color:#FFD700;
     text-align:center;
-    padding:80px 20px;
+    padding:120px 20px;
 }
+
 header h1{
-    font-size:3em;
-    letter-spacing:2px;
+    font-family:'Playfair Display', serif;
+    font-size:3.8em;
+    color:#FFD700;
+    letter-spacing:3px;
+}
+
+header p{
+    color:#ccc;
+    margin-top:20px;
 }
 
 nav{
-    background:#000;
-    display:flex;
-    justify-content:center;
-}
-nav a{
-    color:white;
-    padding:15px 25px;
-    text-decoration:none;
-    font-weight:bold;
-}
-nav a:hover{
-    background:#B8860B;
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
 }
 
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:70px 20px;
+nav a{
+    color:#FFD700;
+    margin:0 25px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+.section{
+    max-width:1100px;
+    margin:120px auto;
+    padding:0 20px;
 }
 
 h2{
-    color:#B8860B;
-    margin-bottom:25px;
-    font-size:2em;
+    font-family:'Playfair Display', serif;
+    color:#FFD700;
+    margin-bottom:30px;
 }
 
-.contact-box{
-    background:#FFD700;
-    padding:40px;
+.box{
+    background:linear-gradient(135deg,#1a1a1a,#111);
+    padding:50px;
+    border:1px solid #333;
     border-radius:10px;
 }
 
-.contact-box a{
-    color:#111;
-    font-weight:bold;
-    text-decoration:none;
+.gold-price{
+    font-size:2.5em;
+    color:#FFD700;
+    margin-top:20px;
 }
 
-button.legal-btn{
+button{
     padding:15px 30px;
-    background:#111;
-    color:#FFD700;
+    background:#FFD700;
     border:none;
     font-weight:bold;
     cursor:pointer;
     border-radius:5px;
     margin-top:20px;
 }
-button.legal-btn:hover{
-    background:#333;
+
+button:hover{
+    background:white;
 }
 
-/* MODALE */
-.modal{
+/* ESPACE CLIENT */
+.login-box{
+    text-align:center;
+}
+
+input{
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:5px;
+    margin-top:15px;
+}
+
+/* BOUTONS FLOTTANTS */
+.floating-contact{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.8);
+    bottom:30px;
+    right:30px;
     display:flex;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    visibility:hidden;
-    transition:0.4s;
+    flex-direction:column;
+    gap:15px;
     z-index:9999;
 }
-.modal.active{
-    opacity:1;
-    visibility:visible;
-}
-.modal-content{
-    background:#111;
+
+.floating-btn{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
     color:white;
-    width:90%;
-    max-width:800px;
-    max-height:80vh;
-    padding:40px;
-    border-radius:10px;
-    overflow-y:auto;
-    transform:translateY(50px);
-    transition:0.4s;
-}
-.modal.active .modal-content{
-    transform:translateY(0);
-}
-.modal-content::-webkit-scrollbar{
-    width:8px;
-}
-.modal-content::-webkit-scrollbar-thumb{
-    background:#FFD700;
-    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    transition:0.3s;
 }
 
-.close{
-    color:#FFD700;
-    float:right;
-    font-size:1.5em;
-    cursor:pointer;
-}
+.floating-btn:hover{ transform:scale(1.1); }
+
+.whatsapp{ background:#25D366; }
+.phone{ background:#111; }
+.gmail{ background:#D44638; }
 
 footer{
-    background:#000;
-    color:white;
     text-align:center;
-    padding:40px;
-    margin-top:60px;
+    padding:60px;
+    border-top:1px solid #222;
+    margin-top:120px;
+    color:#888;
 }
 </style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
 <header>
 <h1>LA MAIN D’OR</h1>
-<p>Expertise & Analyse du Marché de l’Or depuis 2014</p>
+<p>Cabinet Privé d’Analyse et de Conseil en Métaux Précieux</p>
 </header>
 
 <nav>
-<a href="#about">À propos</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
+<a href="#about">Présentation</a>
+<a href="#market">Marché</a>
+<a href="#client">Espace Client</a>
 </nav>
 
-<div class="container">
-
-<section id="about">
-<h2>Présentation</h2>
-<p>LA MAIN D’OR est spécialisée dans l’analyse du marché de l’or.</p>
-<p><strong>Capital déclaré :</strong> 500 000 € par mois</p>
+<section class="section" id="about">
+<h2>Notre Cabinet</h2>
+<div class="box">
+<p>
+LA MAIN D’OR est un cabinet spécialisé dans l’analyse stratégique du marché de l’or et des métaux précieux.
+Capital déclaré : 500 000 € par mois.
+Siège social : 17 Place Jeanne d'Arc, 31000 Toulouse – France.
+</p>
+</div>
 </section>
 
-<section id="services">
-<h2>Nos Services</h2>
-<ul>
-<li>Analyse du marché aurifère</li>
-<li>Études économiques</li>
-<li>Conseils spécialisés</li>
-</ul>
+<section class="section" id="market">
+<h2>Cours Indicatif de l’Or</h2>
+<div class="box">
+<p>Prix international indicatif :</p>
+<div class="gold-price" id="goldPrice">2 150 € / once</div>
+</div>
 </section>
 
-<section id="contact">
-<h2>Contact</h2>
-
-<div class="contact-box">
-<p><strong>Adresse :</strong><br>
-17 Place Jeanne d'Arc<br>
-31000 Toulouse<br>
-France</p>
-
-<p><strong>Téléphone :</strong><br>
-<a href="tel:+33631123050">+33 6 31 12 30 50</a></p>
-
-<p><strong>Email :</strong><br>
-<a href="mailto:Sarahmorell36@gmail.com">Sarahmorell36@gmail.com</a></p>
+<section class="section" id="client">
+<h2>Espace Client Sécurisé</h2>
+<div class="box login-box">
+<p>Accès réservé aux clients premium</p>
+<input type="password" id="password" placeholder="Mot de passe">
+<br>
+<button onclick="checkLogin()">Accéder</button>
+<p id="loginMessage" style="margin-top:15px;color:#FFD700;"></p>
 </div>
-
-<button class="legal-btn" onclick="openModal()">Voir les Mentions Légales</button>
-
 </section>
-
-</div>
-
-<!-- MODALE -->
-
-<div class="modal" id="legalModal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">&times;</span>
-
-<h2 style="color:#FFD700;">Mentions Légales</h2>
-
-<p><strong>Dénomination :</strong> LA MAIN D’OR</p>
-<p><strong>Forme juridique :</strong> SARL</p>
-<p><strong>SIRET :</strong> 750 713 893</p>
-<p><strong>RCS :</strong> Toulouse</p>
-<p><strong>Siège social :</strong> 17 Place Jeanne d'Arc, 31000 Toulouse</p>
-<p><strong>Capital :</strong> 500 000 € (déclaration mensuelle)</p>
-<p><strong>TVA :</strong> FR 75 750713893</p>
-<p><strong>Code APE :</strong> 6619B</p>
-
-<h3 style="color:#FFD700;margin-top:20px;">Contact officiel</h3>
-<p>Téléphone : +33 6 31 12 30 50</p>
-<p>Email : Sarahmorell36@gmail.com</p>
-
-<h3 style="color:#FFD700;margin-top:20px;">Responsabilité</h3>
-<p>Les informations publiées sont fournies à titre informatif et ne constituent pas un conseil en investissement.</p>
-
-</div>
-</div>
 
 <footer>
-<p>© 2026 LA MAIN D’OR – Toulouse</p>
+© 2026 LA MAIN D’OR – Toulouse – France
 </footer>
 
+<!-- BOUTONS FLOTTANTS -->
+<div class="floating-contact">
+
+<div class="floating-btn whatsapp" onclick="openWhatsApp()">💬</div>
+
+<a href="tel:+33631123050" class="floating-btn phone">📞</a>
+
+<div class="floating-btn gmail" onclick="openGmail()">📧</div>
+
+</div>
+
 <script>
-function openModal(){
-    document.getElementById("legalModal").classList.add("active");
+
+/* Protection basique */
+document.addEventListener("keydown", function(e){
+if(e.ctrlKey && (e.key==="u"||e.key==="c"||e.key==="s")){
+e.preventDefault();
 }
-function closeModal(){
-    document.getElementById("legalModal").classList.remove("active");
+});
+
+/* Simulation cours or dynamique */
+setInterval(function(){
+let base=2150;
+let variation=(Math.random()*20-10).toFixed(2);
+document.getElementById("goldPrice").innerText=(base+parseFloat(variation)).toFixed(2)+" € / once";
+},4000);
+
+/* Espace client */
+function checkLogin(){
+let pass=document.getElementById("password").value;
+if(pass==="LMO2026"){
+document.getElementById("loginMessage").innerText="Accès autorisé – Bienvenue.";
+}else{
+document.getElementById("loginMessage").innerText="Mot de passe incorrect.";
 }
-window.onclick = function(event){
-    const modal = document.getElementById("legalModal");
-    if(event.target == modal){
-        modal.classList.remove("active");
-    }
 }
+
+/* Détection mobile */
+function isMobile(){
+return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+function openGmail(){
+if(isMobile()){
+window.location.href="googlegmail://co?to=Lamaindor462@gmail.com";
+setTimeout(function(){
+window.location.href="mailto:Lamaindor462@gmail.com";
+},500);
+}else{
+window.location.href="https://mail.google.com/mail/?view=cm&fs=1&to=Lamaindor462@gmail.com";
+}
+}
+
+function openWhatsApp(){
+if(isMobile()){
+window.location.href="whatsapp://send?phone=33631123050&text=Bonjour%20LA%20MAIN%20D’OR";
+setTimeout(function(){
+window.location.href="https://wa.me/33631123050";
+},500);
+}else{
+window.location.href="https://wa.me/33631123050";
+}
+}
+
 </script>
 
 </body>
